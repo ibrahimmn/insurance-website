@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Graduation project">
+    <meta name="author" content="Ibrahim Mnaimne">
+   
+    <title>protectnow | Login</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/web-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <section>
+        <div class="topnav">
+            <a class="active"  href="home.html"><img src="assets/logo.png" alt="insurance"></a>
+            <div class="side">
+            <a href="register.html">Register</a>
+            <a href="home.html">Home</a>
+            
+            </div>
+          </div>
+    </section>
+
+
+
+    <div class="head">
+        <h2>Sign In</h2>
+        <p>Please sign in to access your account</p>
+    </div>
+    <form>
+       
+        <div class="loginform">
+            
+            <label for="email">Email:
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </label>
+            
+            <!-- <label for="password">Password:
+                <input type="password" id="password" placeholder="Password" minlength="8" required>        
+            </label> -->
+            <p>
+                <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Password" minlength="8" required>
+                    
+                
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </p>
+          
+            <div class="check">
+            <!-- <label for="showpass">
+                <input type="checkbox" onclick="showpass()">Show Password
+            </label> -->
+            <a class="f" href="#">Forgot password?
+            </a>
+             </div><br>
+        </div>
+        <div>
+            <input type="submit" class="submit" value="Login">
+        </div>
+        <div class="available-account">
+            <p>Not a member ? <a href="register.html"> Register Now</a> </p>
+        </div>
+    </form>
+
+
+    <script>
+        // function showpass(){
+        //     var x=document.getElementById("password");
+        //     if (x.type === "password"){
+        //         x.type="text";
+        //     }else{
+        //         x.type="password";
+        //     }
+        //     var x=document.getElementById("confirm-password");
+        //     if (x.type === "password"){
+        //         x.type="text";
+        //     }else{
+        //         x.type="password";
+        //     }
+
+        // }
+
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>    
+</html>

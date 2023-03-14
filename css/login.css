@@ -20,8 +20,8 @@
     font-size: 28px;
     line-height: 36px;
 }
-.login-form{}
-.login-form .form-group{}
+/* .login-form{}
+.login-form .form-group{} */
 .login-form .form-group .form-control{
     border: 2px solid #eee;
 }

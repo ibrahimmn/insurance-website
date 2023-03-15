@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href='css/nav.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        
+    </head>
+    <body>
+
+        <nav>
+            <div class="logo">
+              <a href="#"> <img src="assets/new-logo.png" alt="protectnow">protectnow</a>
+            </div>
+
+            <div class="toggle">
+                <a href="#"><i class="fa-solid fa-bars"></i></a>
+            </div>
+
+            <ul class="menu">
+                <li><a href="#">Overview</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Services 
+                          <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <div class="inner-dropdown">
+                              <a href="#">Protect what you love  <i class="fa fa-angle-right"></i></a>
+                              <div class="dropright-content">
+                                <a href="#">Car insurance</a>
+                                <a href="#">Home insurance</a>
+                                <a href="#">Travel insurance</a>
+                              </div>
+                            </div>
+                    
+                          <div class="inner-dropdown">
+                              <a href="#">Protect who you love  <i class="fa fa-angle-right"></i></a>
+                              <div class="dropright-content">
+                                <a href="#">Savings and investments</a>
+                                <a href="#">Life insurance and critical illness</a>
+                                <a href="#">pensions and retirement planning</a>
+                              </div>
+                            </div>
+                            <a href="#">Protect your health</a>
+                    
+                            <div class="inner-dropdown">
+                              <a href="#">Protect your business <i class="fa fa-angle-right"></i></a>
+                              <div class="dropright-content">
+                                <a href="#">Your products </a>
+                                <a href="#">Commercial insurance Sustainibility</a>
+                                <a href="#">Commercial insurance Risk Insights </a>
+                              </div>
+                            </div>
+                    
+                            <div class="inner-dropdown">
+                              <a href="#">Protect your employees <i class="fa fa-angle-right"></i></a>
+                              <div class="dropright-content">
+                                <a href="#">Internationally mobile employees</a>
+                                <a href="#">Protection all around the world</a>
+                                <a href="#">Travel insurance</a>
+                              </div>
+                            </div>
+                        
+                        </div>
+                      </div> 
+                </li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                
+            </ul>
+            <ul class="logreg">
+                
+                <li class="reg"><a href="register.html">Register</a></li>
+                <li class="log"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+
+        <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <script>
+             $(function(){
+                 $(".toggle").on("click",function(){
+                     if($(".menu").hasClass("active")){
+                         $(".menu").removeClass("active");
+                         $(this).find("a").html("<i class='fa-solid fa-bars'></i>");
+                     }else{
+                         $(".menu").addClass("active");
+                         $(this).find("a").html("<i class=' fa-solid fa-xmark'></i>");
+                     }
+                
+             })
+          });
+
+        </script>
+        
+
+    </body>
+</html>

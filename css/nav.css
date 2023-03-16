@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: tahoma;
+    background-color: #fffdfa;
 }
 
 a,a.hover{
@@ -8,7 +9,7 @@ a,a.hover{
 }
 
 nav{
-    background-color: aqua;
+    background-color: #fffdfa;
     padding: 0px 0px;
     
     display: flex;
@@ -16,7 +17,7 @@ nav{
     max-height: 58px;
 }
 nav a{
-    color:#fff;
+    color:black;
 }
 nav a:hover{
     color:#ef4b3f;
@@ -28,9 +29,10 @@ nav a:hover{
     display: flex;
     align-items: center;
     font-size: 30px;
+
 }
 .logo a:hover{
-    color:#fff;
+    color:#ef4b3f;
 }
 .logo img{
     width:50px;
@@ -54,7 +56,7 @@ nav a:hover{
   }
   .dropdown i{
     margin-left: 7px;
-    
+    margin-top: 5px;
     float: right;
   }
   
@@ -62,13 +64,16 @@ nav a:hover{
     font-size: x-large;
     border: none;
     outline: none;
-    color: white;
+    color: black;
     
     background-color: inherit;
     font-family: inherit;
    
   }
-  
+  .dropdown .dropbtn:hover {
+   color: #ef4b3f;
+   cursor:pointer;
+  }
   .dropdown-content {
     display: none;
     position: absolute;
@@ -133,6 +138,10 @@ nav a:hover{
 }
  .log{
     background-color: red;
+    
+}
+.log a{
+    color: #fffdfa;
 }
 .log a:hover{
     color:#fff;
@@ -146,6 +155,7 @@ nav a:hover{
 }
 i{
     color: black;
+   
 }
 @media screen and (max-width: 600px) {
     nav{

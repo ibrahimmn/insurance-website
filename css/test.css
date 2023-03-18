@@ -9,21 +9,22 @@ body{
   }
   /* nav start */
  
-  nav{
-    background-color: #fffdfa;
-    padding: 0px 0px;
-
-    display: flex;
-    align-items: center;
-    max-height: 58px;
-    width: 100%;
-    position: fixed;
+ .nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fffdfa;
+  max-height: 59px;
   }
-  nav a{
-    color:black;
+  .nav li{
+    float: left;
   }
-  nav a:hover{
-    color:#ef4b3f;
+  .nav a{
+    color: #111;
+  }
+  .nav a:hover{
+    color: #ef4b3f;
   }
   .logo{
     flex:1;
@@ -55,6 +56,7 @@ body{
   .menu li{
     padding: 15px 10px;
     margin:0px 10px;
+    color: #ee0000;
   }
 
   /* dropdown */
@@ -136,12 +138,13 @@ body{
   /* end */
 
   .logreg{
-    display: flex;
+   
     align-items: center;
     list-style: none;
     font-size: x-large;
   }
   .logreg li{
+    float: right;
     padding: 15px 10px;
   }
   .log{
@@ -166,46 +169,53 @@ body{
 
   }
   @media screen and (max-width: 1150px) {
-    nav{
+    .nav{
         display: block;
-        position: relative;
-        padding: 5px 0px;
+       
+       
         
 
         max-height: 1000px;
     }
     .menu{
-        margin-top: 15px;
+      margin-top: 15px;
         display: none;
 
     }
-    .menu.active, .toggle{
+    .menu.active{
         display: block;
         position: static;
-        margin:0px;
+        
+       margin-top: 65px;
+       margin-left: 0px;
+        
 
     }
+    .menu.active li{
+      float: none;
+    }
     .toggle{
-        position: absolute;
-        top:8px;
-        /* right: 250px;  */
-        float: left;
+      display: block;
+      /* top:8px;
+       
+      float: left; */
 
     }
     .logo{
         flex:1;
-        margin-left: 50px;
+       
     }
     .logo a{
-        display:block;
-        align-items: center;
+       
         font-size: 0px;
     }
     
-    .logreg{
-        position: absolute;
-        right: 0px;
-        top: -23px;
+    ul.logreg{
+      float:right ;
+        
+    
+        /* right: 0px;
+        top: -23px; */
     }
     
 

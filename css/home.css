@@ -8,21 +8,23 @@ a,a.hover{
   text-decoration: none;
 }
 /* nav start */
-nav{
-  background-color: #fffdfa;
-  padding: 0px 0px;
-  
-  display: flex;
-  align-items: center;
-  max-height: 58px;
-  width: 100%;
-  position: relative;
+
+.nav{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #fffdfa;
+max-height: 59px;
 }
-nav a{
-  color:black;
+.nav li{
+  float: left;
 }
-nav a:hover{
-  color:#ef4b3f;
+.nav a{
+  color: #111;
+}
+.nav a:hover{
+  color: #ef4b3f;
 }
 .logo{
   flex:1;
@@ -47,14 +49,19 @@ nav a:hover{
   list-style: none;
   font-size: x-large;
   
+  position: fixed;
+  margin-left: 250px;
+
 }
 .menu li{
   padding: 15px 10px;
+  margin:0px 10px;
+  color: #ee0000;
 }
 
 /* dropdown */
 .dropdown {
-  
+
   overflow: hidden;
 }
 .dropdown i{
@@ -68,10 +75,10 @@ nav a:hover{
   border: none;
   outline: none;
   color: black;
-  
+
   background-color: inherit;
   font-family: inherit;
- 
+
 }
 .dropdown .dropbtn:hover {
  color: #ef4b3f;
@@ -131,17 +138,18 @@ nav a:hover{
 /* end */
 
 .logreg{
-  display: flex;
+ 
   align-items: center;
   list-style: none;
   font-size: x-large;
 }
 .logreg li{
+  float: right;
   padding: 15px 10px;
 }
 .log{
   background-color: #ef4b3f;
-  
+
 }
 .log a{
   color: #fffdfa;
@@ -153,62 +161,75 @@ nav a:hover{
 
 .toggle{
   font-size: 40px;
-  
+
   display: none;
 }
 i{
   color: black;
- 
+
 }
-@media screen and (max-width: 600px) {
-  nav{
+@media screen and (max-width: 1150px) {
+  .nav{
       display: block;
-      position: relative;
-      padding: 5px 0px;
+     
+     
       
+
       max-height: 1000px;
   }
   .menu{
-      margin-top: 15px;
+    margin-top: 15px;
       display: none;
-  }
-  .menu.active, .toggle{
-      display: block;
 
   }
-  .toggle{
-      position: absolute;
-      top:8px;
-      /* right: 250px;  */
-      float: left;
+  .menu.active{
+      display: block;
+      position: static;
       
+     margin-top: 65px;
+     margin-left: 0px;
+      
+
+  }
+  .menu.active li{
+    float: none;
+  }
+  .toggle{
+    display: block;
+    /* top:8px;
+     
+    float: left; */
+
   }
   .logo{
       flex:1;
-      margin-left: 50px;
+     
   }
   .logo a{
-      display: flex;
-      align-items: center;
-      font-size: 30px;
+     
+      font-size: 0px;
   }
-  .logreg{
-      position: absolute;
-      right: 0px;
-      top: -23px;
+  
+  ul.logreg{
+    float:right ;
+      
+  
+      /* right: 0px;
+      top: -23px; */
   }
+  
 
   /* header */
   .header img{
     display: none;
-    
-  } 
+
+  }
   .header {
     align-items: center;
   }
-  
-  
-  
+
+
+
 }
 
 /* nav end */
@@ -217,10 +238,10 @@ i{
 
 
 .header{
- 
+
   /* position:absolute; */
-  display: flex;
-  
+  display: block;
+
   width: 100%;
   height: 350px;
   background-color: #ef4b3f;
@@ -228,7 +249,7 @@ i{
 .header img{
  height: 100%;
  width: 25%;
- 
+
   float:left;
 
 }

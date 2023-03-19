@@ -9,6 +9,7 @@ body{
   }
   /* nav start */
  
+  .top{}
  .nav{
   list-style-type: none;
   margin: 0;
@@ -16,6 +17,7 @@ body{
   overflow: hidden;
   background-color: #fffdfa;
   max-height: 59px;
+  position: sticky;
   }
   .nav li{
     float: left;
@@ -49,9 +51,9 @@ body{
     list-style: none;
     font-size: x-large;
     
-    position: fixed;
+    /* position: fixed; */
     margin-left: 250px;
-
+width: 1000px;
   }
   .menu li{
     padding: 15px 10px;
@@ -86,11 +88,11 @@ body{
   }
   .dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #f9f9f9;
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+   
   }
 
   .dropdown-content a {
@@ -101,6 +103,8 @@ body{
     display: block;
     text-align: left;
     font-size: large;
+    
+    
   }
 
   .dropdown-content a:hover {
@@ -142,6 +146,8 @@ body{
     align-items: center;
     list-style: none;
     font-size: x-large;
+    float: right;
+    margin-top: -61px;
   }
   .logreg li{
     float: right;
@@ -188,7 +194,7 @@ body{
         
        margin-top: 65px;
        margin-left: 0px;
-        
+        padding-bottom: 150px;
 
     }
     .menu.active li{
@@ -209,10 +215,27 @@ body{
        
         font-size: 0px;
     }
-    
+
+    .dropright-content {
+      position: absolute;
+      top: 0;
+      left: 90%;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: none;
+     
+    }
+    .dropright-content a{
+      font-size: small;
+    }
+    .inner-dropdown:hover .dropright-content {
+      display: block;
+      font-size: small;
+    }
     ul.logreg{
       float:right ;
-        
+        margin-top: -6px;
     
         /* right: 0px;
         top: -23px; */
@@ -227,7 +250,48 @@ body{
     .header {
       align-items: center;
     }
+    .header p{
+      position:static  ;
+      color: #fffdfa;
+      font-size: 40px;
+     margin:0;
+      
+  
+      /* margin: 0 auto; */
+      
+    }
 
+    .hand{
+      
+ margin-top: 415px;
+  flex-direction: column-reverse;
+    }
+  .hand img{
+  width: 90%;
+  padding-bottom: 10px;
+  }
+  
+   .hand p{
+    margin: 0;
+     font-size: 10px;
+   }
+   
+
+   .quote{
+    margin-top: 415px;
+   }
+   .innerquote{
+    overflow: hidden;
+  padding: 7px;
+   }
+   .innerquote h2{
+    font-size: large;
+
+
+   }
+.innerquote img{
+  display: none;
+}
 
 
   }
@@ -236,26 +300,126 @@ body{
 
 
 
+/* header-start */
 
   .header{
 
     /* position:absolute; */
-    display: block;
-
+    display: flex;
+    clear: both;
+    align-items: center;
+    
+    
     width: 100%;
-    height: 350px;
+    height: 450px;
     background-color: #ef4b3f;
   }
   .header img{
    height: 100%;
-   width: 25%;
+   width: 22.5%;
 
     float:left;
 
   }
   .header p{
+    position:static  ;
     color: #fffdfa;
     font-size: 70px;
-    margin: 0 auto;
-    margin-top: 85px;
+    margin-left: 70px;
+    margin-top: -20px;
+    
+
+    /* margin: 0 auto; */
+    
   }
+
+  /* header-end */
+
+
+  /* hand-start */
+
+  .hand{
+   display: flex;
+    width: 100%;
+    height: 450px;
+    padding: 10px 0px;
+    align-items:center ;
+    justify-content: center;
+  }
+  /* .innerhand{
+    width: 100%;
+    height: 350px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  .hand img{
+    height: 100%;
+  }
+  .hand p{
+    width: 50% ;
+    font-size: 50px;
+  }
+  .hand p a{
+color: #ef4b3f;
+  }
+
+  /* hand-end */
+
+
+  /* quote-start */
+.quote{
+  width: 100%;
+  height: 450px;
+  display:flex;
+  background-color: #ef4b3f;
+  
+
+  justify-content: center;
+  align-items: center;
+
+}
+.innerquote{
+  width: 80%;
+  height: 427px;
+  box-shadow: 19px 19px 19px 19px rgba(0,0,0,0.6);
+  background-color: #fffdfa;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.innerquote img{
+  height: 100%;
+}
+/* quote-end */
+
+
+/* browse-start */
+.browse{
+  width: 100%;
+  height: 450px;
+  display:flex;
+  background-color: #ef4b3f;
+  
+
+  justify-content: center;
+  align-items: center;
+
+}
+.innerbrowse{
+  width: 80%;
+  height: 427px;
+  box-shadow: 19px 19px 19px 19px rgba(0,0,0,0.6);
+  background-color: #fffdfa;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.innerbrowse img{
+  height: 100%;
+}
+
+/* browse-end */

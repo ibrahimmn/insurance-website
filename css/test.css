@@ -308,9 +308,15 @@ display: none;
 
 
 
-
+footer{
+  height: 450px;
+}
 .row.primary {
   grid-template-columns: 1fr;
+ 
+    display: flex;
+    justify-content: end;
+    padding: 2px;
   /* display: flex;
   flex-direction: ;
   */

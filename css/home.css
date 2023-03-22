@@ -249,7 +249,16 @@ i{
   }
   .header {
     align-items: center;
+    animation-name: header;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    position: relative;
   }
+  @keyframes header {
+    from {left:0px;}
+    to{left: 100px;}
+  }
+  
   .header p{
     position:static  ;
     color: #fffdfa;
@@ -260,6 +269,10 @@ i{
     /* margin: 0 auto; */
 
   }
+
+
+
+
 
   .hand{
 
@@ -309,7 +322,7 @@ display: none;
 
 
 footer{
-height: 450px;
+height: 350px;
 }
 .row.primary {
 grid-template-columns: 1fr;

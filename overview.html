@@ -83,7 +83,7 @@
     </ul>
     <ul class="logreg">
       <li class="log"><a href="login.html">Login</a></li>
-        <li class="reg"><a href="register.html">Register</a></li>
+      <li class="reg"><a href="register.html">Register</a></li>
        
     </ul>
 
@@ -104,8 +104,9 @@
 </div>
 </div>
 
-
+<!-- <div class="serv"><h2>services</h2></div> -->
 <div class="scroll">
+  
     <div class="container">
         <ul class="scrollimg">
             <li>
@@ -175,9 +176,18 @@
             </li>
         </ul>
     </div>
-    <button id="slideLeft" type="button">Slide left</button>
-<button id="slideRight" type="button">Slide right</button>
+
+    <!-- <button id="slideLeft" type="button">Slide left</button>
+    <button id="slideRight" type="button">Slide right</button> -->
 </div>
+
+
+
+
+<div class="prepared">
+  <p><strong>Be prepared</strong></p>
+</div>
+
 
 
 <footer>
@@ -243,7 +253,18 @@
      })
   });
 
+  const buttonRight = document.getElementById('slideRight');
+const buttonLeft = document.getElementById('slideLeft');
+
+buttonRight.onclick = function() {
+  document.getElementById('scrollimg').scrollLeft += 20;
+};
+buttonLeft.onclick = function() {
+  document.getElementById('scrollimg').scrollLeft -= 20;
+};
+
 </script>
+
 
 
 

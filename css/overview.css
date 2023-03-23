@@ -255,7 +255,7 @@ body{
     overflow: hidden;
     overflow-x: scroll;
     
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
     
     
 }
@@ -298,22 +298,52 @@ figure{
 .innerinf{
    padding: 20px;
     width:266px;
+    height: 500px;
    display: block;
    background-color: #fffdfa;
    
 }
 .innerinf p{
-    /* box-shadow: inset 0 -8px 6px -6px #1010ff; */
+   
 }
 figure img{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transition: width 2s, height 2s;
+
+    /* box-shadow: inset 0 -8px 6px -6px #1010ff; */
+}
+figure img:hover{
+  width: 110%;
+  height: 110%;
+}
+.inf{
+
+}
+
+.scrollimg a:hover .inf{
+  top: -250px;
+  transition-duration: 4s;
 }
 
 
 /* scroll-end */
 
+
+
+/* prepared-start */
+.prepared{
+  width: 100%;
+  text-align: center;
+  background-color: #fffdfa;
+  }
+  .prepared p{
+  color: #ef4b3f;
+  font-size: 60px;
+  }
+  
+  /* prepared-end */
 
   
   

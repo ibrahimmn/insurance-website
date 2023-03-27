@@ -270,10 +270,10 @@ body{
     flex-wrap: nowrap;
     width: 85%;
     height: 580px ;
-    overflow: hidden;
-    overflow-x: scroll;
+    /* overflow: hidden; */
+    /* overflow-x: scroll;
     
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; */
     
     
 }
@@ -285,7 +285,8 @@ body{
     display: flex;
     
     list-style: none;
-    
+    justify-content: space-around;
+    padding-left: 0px;
     
 }
 .scrollimg li{
@@ -300,14 +301,15 @@ body{
 }
 figure{
     width:366px;
-    height: 500px;
+    height: 366px;
+    border-radius: 50%;
     overflow: hidden;
 }
 .inf{
    
    /* overflow: hidden; */
    display: flex;
-   top:-120px;
+   /* top:-120px; */
    position:relative ;
    
    justify-content: center;
@@ -316,7 +318,7 @@ figure{
 .innerinf{
    padding: 20px;
     width:266px;
-    height: 500px;
+    height: 200px;
    display: block;
    background-color: #fffdfa;
    
@@ -328,7 +330,7 @@ figure img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     transition: width 2s, height 2s;
 
     /* box-shadow: inset 0 -8px 6px -6px #1010ff; */
@@ -342,10 +344,15 @@ figure img:hover{
 }
 
 .scrollimg a:hover .inf{
-  top: -250px;
-  transition-duration: 4s;
+  color: #ef4b3f;
+  
 }
 
+
+h4{
+  font-size: large;
+  color: #ef4b3f;
+}
 
 /* scroll-end */
 
@@ -526,13 +533,43 @@ figure img:hover{
     .header p{
       position:static  ;
       color: #fffdfa;
-      font-size: 40px;
+      font-size: 15px;
      margin:0;
   
   
       /* margin: 0 auto; */
-  
     }
+
+    .container{
+      overflow: hidden;
+      overflow-x: scroll;
+    
+    scroll-behavior: smooth;
+    }
+    .inf{
+      margin-top:310px;
+    }
+    figure{
+      height: 300px;
+      width: 300px;
+    }
+    .scrollimg {
+      width: 100%;
+      display: flex;
+      list-style: none;
+      justify-content: flex-start;
+      padding-left: 0px;
+    }
+    .scroll {
+      width: 100%;
+      height: 580px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+
+
+
   
   
   

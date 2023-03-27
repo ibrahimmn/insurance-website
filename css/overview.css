@@ -327,7 +327,7 @@ figure img:hover{
 
 .scrollimg a:hover .inf{
   top: -250px;
-  transition-duration: 4s;
+  transition-duration: 1s;
 }
 
 
@@ -517,6 +517,17 @@ figure img:hover{
       /* margin: 0 auto; */
   
     }
+
+    .scroll {
+      width: 100%;
+      height: 580px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      padding-bottom: 60px;
+    }
+    
   
   
   

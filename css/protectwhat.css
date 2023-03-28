@@ -251,7 +251,8 @@ body{
     height: 550px;
   }
   .subheader.three{
-    height:1200px ;
+    height:1000px ;
+    padding-top: 0;
   }
   .innersub{
     width: 50%;
@@ -272,12 +273,22 @@ width: 60%;
     font-size: x-large;
     color: #0302588e;
   }
+  .innersubsub h2{
+    color: #ef4b3f;
+  }
 
 
   .ulthree{
-
 display: flex;
+flex-direction: column;
+align-items: flex-start;
+
   }
+  .ulthree li{
+    font-size: x-large;
+    padding-top: 12px;;
+  }
+
 
   /* subheader-end */
 
@@ -568,12 +579,24 @@ h4{
   
       /* margin: 0 auto; */
     }
+    .headerinfo.three h2{
+      font-size: xx-large;
+    }
+    .headerinfo.three p {
+      font-size: x-large;
+    }
+
+
 
     .innersub{
       width:100%;
     }
     .subheader{
       height: 350px;
+    }
+    .subheader.three{
+      height:1400px ;
+  
     }
     .two{
       height: 1170px;

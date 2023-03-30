@@ -274,6 +274,7 @@ body{
 
 /* subheader-end */
 
+
 /* abtus-start */
 
 .abtus{
@@ -294,6 +295,7 @@ padding-bottom: 50px;
   display: flex;
   width: 60%;
   justify-content: space-evenly;
+  height: 350px;
 }
 .innerabtus p{
   color: #030258a8;
@@ -302,43 +304,89 @@ padding-bottom: 50px;
 .innerabtus h2{
   padding-bottom: 20px;
   color: #030258ab;
+  
 }
 
 .abtuscont{
   width: 25%;
 height: 200px;
+
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
 box-shadow: 0 10px 25px rgba(0,0,0,.1);
 padding: 15px;
+/* transition: all 5s; */
+
+}
+#us{
+  transition: all 2s;
+}
+#us2{
+  transition: all 5s;
+}
+#us3{
+      transition: all 6.5s;
+  
+}
+
+a:hover.abtuscont{
+  background-color: #ef4b3f;
 }
 
 
 
 
-.bottomMenu {
-    
-    display: flex;
-    width: 100%;
-    height: 60px;
-    border-top: 1px solid #000;
-    background: red;
-    z-index: 1;
-    transition: all 1s;
-  }
+
+
   .hide {
     opacity: 0;
-    left: -100%;
+    margin-top: 80px;
   }
   .show {
     opacity: 1;
-    left: 0;
+    margin-top:0;
+    
   }
-  
+  /* abtus-end */
 
-  /* us-end */
+
+
+ /* logn-start */
+
+.logn{
+width: 100%;
+height:250px;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+background-color: #ef4b3f;
+
+}
+.logn p{
+font-size: xx-large;
+color: #fffdfa;
+}
+.logn a{
+  color:#fffdfa;
+  text-decoration:underline;
+  font-weight: 900;
+}
+.logn a:hover{
+  color:#e00404;
+}
+.logn.two{
+  background-color: #fffdfa;
+}
+.logn.two p{
+  color: #030258e0;
+
+}
+
+
+  /* logn-end */
 
 
 
@@ -348,104 +396,95 @@ padding: 15px;
 
 /* scroll-start */
 .scroll{
-    width: 100%;
-    height: 580px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 60px ;
-    
+  width: 100%;
+  height: 580px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px ;
+  padding-top: 20px ;
+  
 }
 .container{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 85%;
-    height: 580px ;
-    /* overflow: hidden; */
-    /* overflow-x: scroll;
-    
-    scroll-behavior: smooth; */
-    
-    
+  display: flex;
+  flex-wrap: nowrap;
+  width: 65%;
+  height: 580px ;
+  overflow: hidden;
+  overflow-x: scroll;
+  
+  scroll-behavior: smooth;
+  
+  
 }
 .container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .scrollimg{
-    width: 100%;
-    display: flex;
-    
-    list-style: none;
-    justify-content: space-around;
-    padding-left: 0px;
-    
+  width: 100%;
+  display: flex;
+  
+  list-style: none;
+  
+  
 }
 .scrollimg li{
-    width: 456px; ;
-    padding: 5px;
-    
+  width: 456px; ;
+  padding: 5px;
+  
 }
 .scrollimg a{
-    max-height: 300px;
-    overflow: hidden;
-    
+  max-height: 300px;
+  overflow: hidden;
+  
 }
 figure{
-    width:366px;
-    height: 366px;
-    border-radius: 50%;
-    overflow: hidden;
+  width:366px;
+  height: 500px;
+  overflow: hidden;
 }
 .inf{
-   
-   /* overflow: hidden; */
-   display: flex;
-   /* top:-120px; */
-   position:relative ;
-   
-   justify-content: center;
-   align-items: center;
+ 
+ /* overflow: hidden; */
+ display: flex;
+ top:-120px;
+ position:relative ;
+ 
+ justify-content: center;
+ align-items: center;
 }
 .innerinf{
-   padding: 20px;
-    width:266px;
-    height: 200px;
-   display: block;
-   background-color: #fffdfa;
-   
+ padding: 20px;
+  width:266px;
+  height: 500px;
+ display: block;
+ background-color: #fffdfa;
+ 
 }
 .innerinf p{
-   
+ 
 }
 figure img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    /* border-radius: 50%; */
-    transition: width 2s, height 2s;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: width 2s, height 2s;
 
-    /* box-shadow: inset 0 -8px 6px -6px #1010ff; */
+  /* box-shadow: inset 0 -8px 6px -6px #1010ff; */
 }
 figure img:hover{
-  width: 110%;
-  height: 110%;
+width: 110%;
+height: 110%;
 }
 .inf{
 
 }
 
 .scrollimg a:hover .inf{
-  color: #ef4b3f;
-  
+top: -250px;
+transition-duration: 1s;
 }
-
-
-h4{
-  font-size: large;
-  color: #ef4b3f;
-}
-
 /* scroll-end */
 
 
@@ -732,6 +771,17 @@ h4{
     top:-300px;
   }
   
+
+  .scroll {
+    width: 100%;
+    height: 580px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+
   }
   
   

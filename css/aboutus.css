@@ -241,24 +241,19 @@ body{
   
   /* subheader-start */
   .subheader{
-    padding-top:90px ;
+    padding-top:30px ;
     padding-bottom: 90px;
     display: flex;
     width: 100%;
-    height: 250px;
+    max-height: 1250px;
    align-items: center;
    justify-content: center;
     background-color: #fffdfa;
   }
-  .two{
-    height: 550px;
-  }
-  .subheader.three{
-    height:1000px ;
-    padding-top: 0;
-  }
+  
+ 
   .innersub{
-    width: 50%;
+    width: 75%;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -266,31 +261,11 @@ body{
     text-align: center;
   }
   .innersub p {
-    font-size: xx-large;
+    font-size: x-large;
     color: #030258af;
   }
-  .innersubsub{
-width: 60%;
-  }
-  .innersubsub p{
-    font-size: x-large;
-    color: #0302588e;
-  }
-  .innersubsub h2{
-    color: #ef4b3f;
-  }
+ 
 
-
-  .ulthree{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-
-  }
-  .ulthree li{
-    font-size: x-large;
-    padding-top: 12px;;
-  }
 
 
  
@@ -299,7 +274,50 @@ align-items: flex-start;
 
 /* subheader-end */
 
-/* us-start */
+/* abtus-start */
+
+.abtus{
+  width: 100%;
+  max-height: 800px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  /* overflow: scroll; */
+}
+.abtus h2{
+color: #030258e0;
+padding-bottom: 50px;
+}
+.innerabtus{
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+}
+.innerabtus p{
+  color: #030258a8;
+  font-size: x-large;
+}
+.innerabtus h2{
+  padding-bottom: 20px;
+  color: #030258ab;
+}
+
+.abtuscont{
+  width: 25%;
+height: 200px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+box-shadow: 0 10px 25px rgba(0,0,0,.1);
+padding: 15px;
+}
+
+
+
+
 .bottomMenu {
     
     display: flex;

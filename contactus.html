@@ -13,6 +13,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/contactus.css">
+    
 </head>
 <body>
  
@@ -100,15 +101,27 @@
         <h2>Contact us</h2>
         <p><span>Address:</span> Beşyol, İnönü Cd. No:38, 34295 Küçükçekmece/İstanbul</p>
         <p><span>Telefon:</span> <a href="tel:441428">441428</a></p>
+        <p><span>Email:</span> <a href="mailto:admission@aydin.edu.tr">admission@aydin.edu.tr</a></p>
          </div>
 
     
-    <form method="post" action="php/emailsubmit.php">
+    <!-- <form id="emailsub" > -->
+      <form method="post" action="php/emailsubmit.php">
 
-        <h2>Or send us an email</h2>
-        <textarea placeholder="Enter your message here" name="message"></textarea>
-                
-        <input type="submit">
+        <h2>Send us a Message</h2>
+
+        <span>Name:</span> <input type="text" name="first_name"><br>
+       <span>Last Name:</span> <input type="text" name="last_name"><br>
+        <span>Email:</span> <input type="text" name="email" required><br>
+        <span>Message:</span><br><textarea  name="message" required></textarea><br>
+        <input type="submit" name="submit" value="Submit">
+        <!-- <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+        <input type="submit" value="Submit"> -->
         
         </form>
     </div>
@@ -169,6 +182,7 @@
 
 
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
      $(function(){
@@ -184,34 +198,25 @@
      })
   });
 
-//   const buttonRight = document.getElementById('slideRight');
-// const buttonLeft = document.getElementById('slideLeft');
 
-// buttonRight.onclick = function() {
-//   document.getElementById('scrollimg').scrollLeft += 20;
-// };
-// buttonLeft.onclick = function() {
-//   document.getElementById('scrollimg').scrollLeft -= 20;
-// };
+  // $(document).ready(function() {
+  //   $('#emailsub').submit(function(event) {
+  //     event.preventDefault(); // Prevent default form submission
 
-myID = document.getElementById("myID");
-us=document.getElementById("us")
-us2=document.getElementById("us2")
-us3=document.getElementById("us3")
-var myScrollFunc = function() {
-  var y = window.scrollY;
-  if (y >= 500) {
-    us.className = "abtuscont one show";
-    us2.className = "abtuscont two show";
-    us3.className = "abtuscont three show";
-  } else {
-    us.className = "abtuscont one hide";
-    us2.className = "abtuscont two hide";
-    us3.className = "abtuscont three hide";
-  }
-};
+  //     $.ajax({
+  //       type: 'POST',
+  //       url: 'php/emailsubmit.php',
+  //       data: $('#emailsub').serialize(), // Send form data to PHP file
+  //       success: function(response) {
+  //         // Display the response from PHP file
+  //         console.log(response);
+  //       }
+  //     });
+  //   });
+  // });
 
-window.addEventListener("scroll", myScrollFunc);
+
+
 
 </script>
 

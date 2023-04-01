@@ -182,10 +182,15 @@ body{
 .contact{
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 700px;
+    max-height: 800px;
     justify-content: center;
     align-items: center;
 
+
+}
+.contact a:hover{
+  color: #ef4b3f;
 }
 .innercontact{
    width: 70%;
@@ -200,15 +205,48 @@ span{
     color: #030258a9;
     font-weight: 900;
 }
+.contactussub{
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+ 
+}
 .contact form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 textarea{
-    height: 250px;
-    width: 300px;
-}
+    height: 150px;
+    width: 500px;
+    max-width: 600px;
+    max-height: 300px;
+    overflow: scroll;
+    font-size: x-large; 
+   }
+input[type="submit"]{
+display: block;
+font-size: x-large;
+background-color: #ef4b3f;
+color: #fffdfa;
+width: 150px;
+height: 50px;
+margin: 0 auto;
+border-radius: 20px;
+margin-top: 10px;
+border-color: #ef4b3f;
+cursor: pointer;
 
+
+}
+input[type="submit"]:hover{
+  background-color: #ef4b3fd5;
+  border-color: #ef4b3fd5;
+}
+input{
+  margin-top: 10px;
+  font-size: x-large;
+}
 
 
 

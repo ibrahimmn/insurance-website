@@ -1,3 +1,43 @@
+<?php
+
+// if(isset($_POST['submit'])){
+//     $to = "ibrahimmneimneh2000@gmail.com"; // this is your Email address
+//     $from = $_POST['email']; // this is the sender's Email address
+//     $first_name = $_POST['first_name'];
+//     $last_name = $_POST['last_name'];
+//     $subject = "Form submission";
+//     $subject2 = "Copy of your form submission";
+//     $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+//     $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+//     $headers = "From:" . $from;
+//     $headers2 = "From:" . $to;
+//     mail($to,$subject,$message,$headers);
+//     mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+//     echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+// }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ // Get the form data
+ $name = $_POST["name"];
+ $email = $_POST["email"];
+ $message = $_POST["message"];
+
+ // Send the email
+ $to = "ibrahimmneimneh2000@gmail.com";
+ $subject = "New Message from Contact Form";
+ $body = "Name: $name\nEmail: $email\nMessage: $message";
+ $headers = "From: $email";
+
+ if (mail($to, $subject, $body, $headers)) {
+   echo "Thank you for your message!";
+ } else {
+   echo "Oops, something went wrong. Please try again later.";
+ }
+}
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,16 +54,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/contactus.css">
-
-    <!-- <script src="js/contact.js"></script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-    (function(){
-    emailjs.init("0EbG7hdNFtd1kuQ8A");
-    })();
-    </script> -->
+    
 </head>
 <body>
  
@@ -115,21 +146,16 @@
          </div>
 
     
-    <form  >
-      <!-- <form action="emailsubmit.php" method="post" id="ajax_form"> -->
-      <!-- <form id="emailsubmit" action="php/emailsubmit.php" method="POST"> -->
+    <!-- <form id="emailsub" > -->
+      <!-- <form onsubmit="sendmail(); reset(); return false"> -->
+      <form action="" method="POST">
         <h2>Send us a Message</h2>
 
-        <span>Name:</span> <input type="text" id="name" name="name"><br>
+        <span>Name:</span> <input type="text" id="name" name="first_name"><br>
        <span>Last Name:</span> <input type="text" id="lastname" name="last_name"><br>
         <span>Email:</span> <input type="text" id="email" name="email" required><br>
         <span>Message:</span><br><textarea  id="message" name="message" required></textarea><br>
-        <input id="btn"  type="submit"  name="submit" value="Submit">
-
-        <!-- <button onclick='sendmail()'></button> -->
-
-
-
+        <input type="submit" name="submit" value="Submit">
         <!-- <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
         <label for="email">Email:</label>
@@ -137,7 +163,7 @@
         <label for="message">Message:</label><br>
         <textarea id="message" name="message"></textarea><br><br>
         <input type="submit" value="Submit"> -->
-        <!-- <div id="form-messages" class="alert" role="alert"></div> -->
+        
         </form>
     </div>
 </div>
@@ -196,48 +222,23 @@
 
 
 
-<!-- <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
-
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script src="js/vendor/jquery.ajaxchimp.min.js"></script> -->
-
 <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-var btn = document.getElementById('btn');
-btn.addEventListener('click',function(e){
-  e.preventDefault()
-  Email.send({
-    Host : "smtp.gmail.com",
-    Username : "ibrahimmneimneh2000@gmail.com",
-    Password : "ywomzihygfbdxclc",
-    To : 'ibrahimmneimneh2000@gmail.com',
-    From : document.getElementById("email").value,
-    Subject : "New contact mail",
-    Body : "Name: "+document.getElementById("name").value
-          + "<br> Last Name: "+document.getElementById("lastname").value
-          + "<br> Email: "+document.getElementById("email").value
-          + "<br> Message: "+document.getElementById("message").value
-}).then(
-  message => alert(message)
-);
-
-})
-
-
-
   function sendmail(){
   Email.send({
     SecureToken: "a9df5a2b-e2fc-4980-81f3-689f3d8c6aeb",
-     Host : "smtp.elasticemail.com",
-     Username : "username",
-     Password : "password",
+    // Host : "smtp.elasticemail.com",
+    // Username : "username",
+    // Password : "password",
     To : 'tbmn85@gmail.com',
     From : document.getElementById("email").value,
     Subject : "New contact mail",
-    Body : "Name: "+document.getElementById("name").value
-          + "<br> Last Name: "+document.getElementById("lastname").value
-          + "<br> Email: "+document.getElementById("email").value
-          + "<br> Message: "+document.getElementById("message").value
+    Body : "Name: "+getElementById("name").value
+          + "<br> Last Name: "+getElementById("lastname").value
+          + "<br> Email: "+getElementById("email").value
+          + "<br> Message: "+getElementById("message").value
 
 
 }).then(
@@ -260,101 +261,21 @@ btn.addEventListener('click',function(e){
   });
 
 
+  // $(document).ready(function() {
+  //   $('#emailsub').submit(function(event) {
+  //     event.preventDefault(); // Prevent default form submission
 
-  //  function sendmail(){
-  //    var params={
-  //      name: document.getElementById("name").value,
-  //      email: document.getElementById("email").value,
-  //      message: document.getElementById("message").value,
-  //    };
-  
-  //  const serviceid = "service_r7e7sj3";
-  //  const templateid="template_grdq9jg";
-
-  //  emailjs
-  //  .send(serviceid, templateid, params)
-  //  .then((res)=>{
-   
-  //     //  document.getElementById("name").value= "";
-  //     //  document.getElementById("email").value= "";
-  //     //  document.getElementById("message").value= "";
-  //     //  console.log(res);
-  //      alert("Your message is sent "+ res.status);
-  //    }
-  //  )
-  //  .catch((err)=>console.log(err));
-  //  }
-
-
-
-
-
-  //  $(document).ready(function() {
-  //    $('#emailsubmit').submit(function(event) {
-  //      event.preventDefault();
-
-  //      $.ajax({
-  //        type: 'POST',
+  //     $.ajax({
+  //       type: 'POST',
   //       url: 'php/emailsubmit.php',
-  //       data: $('#emailsubmit').serialize(), 
-  //        success: function(response) {
-           
-  //          console.log(response);
-  //        }
-  //      });
-  //    });
-  //  });
-
-
-//   $(function() {
-    
-//     var form = $('#ajax_form');
-
-   
-//     var formMessages = $('#form-messages');
-
-   
-// 	$(form).submit(function(event) {
-	
-// 		event.preventDefault();
-
-		
-// 		var formData = $(form).serialize();
-		
-// 		$.ajax({
-// 			type: 'POST',
-// 			url: $(form).attr('action'),
-// 			data: formData
-// 		})
-// 		.done(function(response) {
-			
-// 			$(formMessages).removeClass('alert-danger');
-// 			$(formMessages).addClass('alert-success');
-
-			
-// 			$(formMessages).text(response);
-
-			
-// 			$('#name').val('');
-// 			$('#email').val('');
-// 			$('#message').val('');
-// 		})
-// 		.fail(function(data) {
-			
-// 			$(formMessages).removeClass('alert-success');
-// 			$(formMessages).addClass('alert-danger');
-
-			
-// 			if (data.responseText !== '') {
-// 				$(formMessages).text(data.responseText);
-// 			} else {
-// 				$(formMessages).text('Oops! An error occured and your message could not be sent.');
-// 			}
-// 		});
-		
-// 	});
-	
-// });
+  //       data: $('#emailsub').serialize(), // Send form data to PHP file
+  //       success: function(response) {
+  //         // Display the response from PHP file
+  //         console.log(response);
+  //       }
+  //     });
+  //   });
+  // });
 
 
 

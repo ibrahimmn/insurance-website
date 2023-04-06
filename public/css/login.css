@@ -148,14 +148,20 @@ a,a.hover{
     }
     .log{
       background-color: #ef4b3f;
+      z-index: 1001;
+      text-align: center;
     
     }
     .log a{
       color: #fffdfa;
     }
-    .log a:hover{
+    .log:hover  a{
+      color: #fff;
+    }
+    .log:hover{
       color:#fff;
-      font-size: xx-large;
+      width: 80px;
+      
     }
     
     .toggle{

@@ -155,16 +155,21 @@ body{
   }
   .log{
     background-color: #ef4b3f;
+    z-index: 1001;
+    text-align: center;
   
   }
   .log a{
     color: #fffdfa;
   }
-  .log a:hover{
-    color:#fff;
-    font-size: xx-large;
+  .log:hover  a{
+    color: #fff;
   }
-  
+  .log:hover{
+    color:#fff;
+    width: 80px;
+    
+  }
   .toggle{
     font-size: 40px;
   

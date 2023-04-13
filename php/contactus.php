@@ -168,10 +168,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 
+<button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa-solid fa-chevron-up  fa-xl" style="color: #fafafa;"></i></button>
+
 <div class="prepared">
   <p><strong>Be prepared</strong></p>
 </div>
-
 
 
 <footer>
@@ -246,18 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 </script> -->
 <script>
-     $(function(){
-         $(".toggle").on("click",function(){
-             if($(".menu").hasClass("active")){
-                 $(".menu").removeClass("active");
-                 $(this).find("a").html("<i class='fa-solid fa-bars'></i>");
-             }else{
-                 $(".menu").addClass("active");
-                 $(this).find("a").html("<i class=' fa-solid fa-xmark'></i>");
-             }
-        
-     })
-  });
+    <script src="/js/main.js"></script>
 
 
   // $(document).ready(function() {

@@ -1,58 +1,23 @@
-const express=require('express');
-
-const app=express();
-const nodemailer= require("nodemailer");
-
-const PORT= process.env.PORT || 5000;
-
-
-
-
-app.use(express.static('public'));
-app.use(express.json())
-
-app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/public/home.html')
-
-})
-
-app.post('/', (req, res)=>{
-    console.log(req.body);
-    const transporter= nodemailer.createTransport({
-        service:'gmail',
-        auth:{
-            user:'bobtestlar@gmail.com',
-            pass: 'aoigehkwaxwkurfe'
-        }
-    })
-    const mailOptions= {
-        from: req.body.email,
-        to: 'bobtestlar@gmail.com',
-        subject:`Message from ${req.body.email}: ${req.body.subject}`,
-        text: req.body.message
-    }
-    transporter.sendMail(mailOptions,(error,info)=>{
-        if(error){
-            console.log(error);
-            res.send('error');
-
-        }else{
-            console.log('Email sent:'+info.response);
-            res.send('success')
-
-        }
-    })
-
-})
-
-
-app.listen(PORT, ()=>{
-    console.log(`server running on port ${PORT}`)
-})
-
-
-
+const dotenv = require('dotenv');
+const express = require('express');
+const http = require('http');
+const logger = require('morgan');
+const path = require('path');
+const router = require('./routes/index');
 const { auth } = require('express-openid-connect');
+
+
+
+//dotenv.load();
+
+const app = express();
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 const config = {
   authRequired: false,
@@ -63,16 +28,72 @@ const config = {
   issuerBaseURL: 'https://dev-ygwg4eyha2gz1ahj.us.auth0.com'
 };
 
-// auth router attaches /login, /logout, and /callback routes to the baseURL
+const port = process.env.PORT || 5000;
+if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
+  config.baseURL = `http://localhost:${port}`;
+}
+
 app.use(auth(config));
 
-// req.isAuthenticated is provided from the auth router
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+// Middleware to make the `user` object available for all views
+app.use(function (req, res, next) {
+  res.locals.user = req.oidc.user;
+  next();
 });
 
-const { requiresAuth } = require('express-openid-connect');
+app.use('/', router);
 
-app.get('/profile', requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
+// Catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
+
+// Error handlers
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: process.env.NODE_ENV !== 'production' ? err : {}
+  });
+});
+
+http.createServer(app)
+  .listen(port, () => {
+    console.log(`Listening on ${config.baseURL}`);
+  });
+
+
+
+
+ 
+// app.post('/', (req, res)=>{
+//     console.log(req.body);
+//     const transporter= nodemailer.createTransport({
+//         service:'gmail',
+//         auth:{
+//             user:'bobtestlar@gmail.com',
+//             pass: 'aoigehkwaxwkurfe'
+//         }
+//     })
+//     const mailOptions= {
+//         from: req.body.email,
+//         to: 'bobtestlar@gmail.com',
+//         subject:`Message from ${req.body.email}: ${req.body.subject}`,
+//         text: req.body.message
+//     }
+//     transporter.sendMail(mailOptions,(error,info)=>{
+//         if(error){
+//             console.log(error);
+//             res.send('error');
+
+//         }else{
+//             console.log('Email sent:'+info.response);
+//             res.send('success')
+
+//         }
+//     })
+
+// })
+

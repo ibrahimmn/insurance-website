@@ -82,13 +82,22 @@
          
      </ul>
      <ul class="logreg">
-       <li class="log"><a href="/login">Login</a></li>
-         <li class="reg"><a href="/signup">Register</a></li>
+      <% if (locals.user) { %>
          
+        <li class="log"><a href="/logout">Logout</a></li>
+        <li class="reg"><a href="/profile">Get insurance</a></li>
+    <% } else { %>
+      <li class="log"><a href="/login">Login</a></li>
+      <li class="reg"><a href="/signup">Register</a></li>
+     <% } %>
+<!--          
 <% if (locals.isAuthenticated) { %>
  <li><p>You are logged in. <a href="/profile" class="underline">View your profile</a>.</p>
  </li> 
-<% } %>
+<% } else { %>
+  <li class="log"><a href="/login">Login</a></li>
+  <li class="reg"><a href="/signup">Register</a></li>
+<% } %> -->
         
      </ul>
   

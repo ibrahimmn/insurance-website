@@ -6,7 +6,7 @@ const nodemailer= require("nodemailer");
 
 router.get('/', function (req, res, next) {
   res.render('home', {
-    // title: 'Auth0 Webapp sample Nodejs',
+    
     isAuthenticated: req.oidc.isAuthenticated()
   });
 });

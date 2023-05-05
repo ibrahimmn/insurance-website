@@ -21,7 +21,7 @@
     <ul class="nav">
    <li>
      <div class="logo">
-       <a href="/home.html"> <img id="logoimg"src="/assets/new-logo.png" alt="protectnow">protectnow</a>
+       <a href="/home"> <img id="logoimg"src="/assets/new-logo.png" alt="protectnow">protectnow</a>
      </div>
    </li>
    
@@ -31,8 +31,8 @@
      </div>
    </li>
      <ul class="menu">
-         <li><a href="/home">Home</a></li>
-         <li><a href="/home">Insurances</a></li>
+         <li><a href="/">Home</a></li>
+         <li><a href="/getinsurance">Insurances</a></li>
                          
      </ul>
      <ul class="logreg">
@@ -57,19 +57,22 @@
    </ul>
   </section>
 
-
-  <h1 class="text-4xl mb-4">Welcome <%= user.nickname %></h1>
-
+  <div class="profilemain">
+    
   <% if (user.picture) { %>
     <img class="block py-3" src="<%= user.picture %>" width="300">
   <% } %>
+  <h1 > <%= user.nickname %></h1>
+  <p><span>Email:</span> <%= user.email %></p>
+
+
+
+  </div>
+
+
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script src="/js/main.js"></script>
   
-  <p class="py-3">
-    This is the content of <code class="bg-gray-200">req.user</code>.<br>
-    <strong>Note:</strong> <code class="bg-gray-200">_raw</code> and <code class="bg-gray-200">_json</code> properties have been omitted.
-  </p>
-
-  <pre class="block bg-gray-300 p-4 text-sm overflow-scroll"><%= userProfile %></pre>
-
 </body>
 </html>

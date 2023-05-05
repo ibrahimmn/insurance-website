@@ -18,6 +18,14 @@ router.get('/profile', requiresAuth(), function (req, res, next) {
   });
 });
 
+router.get('/getinsurance', requiresAuth(), function (req, res, next) {
+  res.render('getinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    title: 'Get insurance'
+  });
+});
+
+
 
 router.post('/', (req, res)=>{
   console.log(req.body);

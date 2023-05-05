@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Graduation project">
+    <meta name="author" content="Ibrahim Mnaimne">
+   
+    <title>protectnow | Profile</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/web-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/css/getinsurance.css">
+</head>
+<body>
+
+  <section class="top">
+
+    <ul class="nav">
+   <li>
+     <div class="logo">
+       <a href="/"> <img id="logoimg"src="/assets/new-logo.png" alt="protectnow">protectnow</a>
+     </div>
+   </li>
+   
+   <li>
+     <div class="toggle">
+         <a href="#"><i class="fa-solid fa-bars"></i></a>
+     </div>
+   </li>
+     <ul class="menu">
+         <li><a href="/home">Home</a></li>
+         <li><a href="/profile">Profile</a></li>
+         
+                         
+     </ul>
+     <ul class="logreg">
+        <li class="reg"><a href="/logout">Logout</a></li>
+      <% if (locals.user) { %>
+         
+        <li class="log"><a href="/profile">
+          <% if (user.picture) { %>
+            <figure>
+            <img  src="<%= user.picture %>" >
+          </figure>
+          <% } %>
+        </a>
+        </li>
+        
+    <% } else { %>
+      <li class="log"><a href="/login">Login</a></li>
+      <li class="reg"><a href="/signup">Register</a></li>
+      <% } %> 
+     
+     </ul>
+  
+   </ul>
+  </section>
+
+
+
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script src="/js/main.js"></script>
+  
+</body>
+</html>

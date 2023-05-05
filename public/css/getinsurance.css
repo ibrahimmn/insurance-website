@@ -142,6 +142,11 @@ width: 1000px;
     
   }
 
+  .reg{
+    text-decoration: underline;
+    color: #ef4b3f;
+  }
+
   .toggle{
     font-size: 40px;
 

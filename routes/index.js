@@ -2,7 +2,7 @@ var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 
 const nodemailer= require("nodemailer");
-
+const PDFDocument = require('pdfkit');
 
 router.get('/', function (req, res, next) {
   res.render('home', {
@@ -55,5 +55,7 @@ router.post('/', (req, res)=>{
   })
 
 })
+
+
 
 module.exports = router;

@@ -3,10 +3,16 @@ const express = require('express');
 const http = require('http');
 const logger = require('morgan');
 const path = require('path');
+// const { jsPDF } = require("jspdf");
 const router = require('./routes/index');
+
+ //const pdf = require('./routes/pdf');
+
 const { auth } = require('express-openid-connect');
 
 
+
+// app.use('/pdf', pdf);
 
 //dotenv.load();
 

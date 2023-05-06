@@ -444,16 +444,18 @@ color: #fffdfa;
   flex-wrap: nowrap;
   width: 65%;
   height: 580px ;
+ 
   overflow: hidden;
   overflow-x: scroll;
   
   scroll-behavior: smooth;
   
+}
+
+.container::-webkit-scrollbar {
   
 }
-.container::-webkit-scrollbar {
-  display: none;
-}
+
 .scrollimg{
   width: 100%;
   display: flex;

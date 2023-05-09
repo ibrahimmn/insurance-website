@@ -350,7 +350,7 @@ flex-direction: row;
   border: 3px solid #ef4b3f;
   border-radius: 50%;
 }
-span{
+.profilemain span{
   font-size: xx-large;
   color: #ef4b3f;
 
@@ -410,3 +410,96 @@ span{
 }
 
 /* insurances */
+
+/* wrapper */
+
+.wrapper{
+  display: flex;
+  
+  transform: translate(68%, 10%);
+}
+
+.wrapper a{
+  display: block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #ef4b3f;
+  background-color: #ef4b3f;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.wrapper a span{
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transition: all .35s;
+  border-radius: 9px;
+}
+
+.wrapper a:hover{
+  color: #ef4b3f;
+}
+
+.wrapper a:hover:after{
+  width: 100%;
+}
+
+/* wrapper */
+
+/* popup */
+
+#zero {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: black;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;;
+}
+
+#aa {  
+  font-weight: bold;
+  position:fixed;
+  left:0;
+  right:0;
+  margin: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 200px;
+  height: auto;
+  padding: 15px;  
+  background: #fff;
+  box-sizing: content-box;
+  border: 3px solid black;
+
+
+}
+
+
+.right {
+  float: right;  
+}
+
+/* popup */

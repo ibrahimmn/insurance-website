@@ -308,16 +308,49 @@
 
 window.jsPDF = window.jspdf.jsPDF;
 
-var form=document.getElementById('form')
+var form=document.getElementById('form 1')
 form.addEventListener('submit',function(event){
   event.preventDefault()
 
-  var text =document.getElementById('text').value
+  //var logoimg='data:image/png;base64,'+Base64.encode('/assets/new-logo.png');
+  var name =document.getElementById('name').value
+  var surname =document.getElementById('surname').value
+  var ID =document.getElementById('ID').value
+
 
   var doc = new jsPDF()
+  doc.addImage("/assets/new-logo.png", 'PNG', 155, 5, 50, 50);
+  doc.setTextColor("red");
+  doc.setFontSize(22);
+  doc.text("protecnow",160,60);
 
-  doc.text(text,20,20)
-  doc.save("testo.pdf")
+  doc.setTextColor("black");
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(19);
+  doc.text("Name:", 2, 80);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(17);
+  doc.text(name,50,80);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(19);
+  doc.text("Surname:", 2, 90);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(17);
+  doc.text(surname,50,90);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(19);
+  doc.text("ID:", 2, 100);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(17);
+  doc.text(ID,50,100);
+
+
+
+
+
+  doc.save("testo.pdf");
 }
 )
   </script>

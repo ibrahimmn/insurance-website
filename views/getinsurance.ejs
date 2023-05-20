@@ -99,14 +99,15 @@
             <a href="#" target=_self onClick="show()"><span>Continue</span></a>
           </div>
           
-          <div id=aa style="display:none">
+          <div class="aa" id="aa 1"  style="display:none">
           <a href=# target_self onClick="hide()" class=right>x</a>
           <form id="form 1">
+            <h3>Protect what you love</h2>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
             <label for="surname">Surname:</label>
             <input name="surname" type="text" id="surname" />
-            <label for="ID">ID:</label>
+            <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
             <button id="button" >Generate</button>
           </form>
@@ -129,17 +130,18 @@
           </div>
           <div id=zero style="display:none"></div>
           <div class="wrapper">
-            <a href="#" target=_self onClick="show()"><span>Continue</span></a>
+            <a href="#" target=_self onClick="show2()"><span>Continue</span></a>
           </div>
           
-          <div id=aa style="display:none">
-          <a href=# target_self onClick="hide()" class=right>x</a>
+          <div class="aa" id="aa 2"  style="display:none">
+          <a href=# target_self onClick="hide2()" class=right>x</a>
           <form id="form 2">
+            <h3>Protect who you love</h2>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
             <label for="surname">Surname:</label>
             <input name="surname" type="text" id="surname" />
-            <label for="ID">ID:</label>
+            <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
             <button id="button" >Generate</button>
           </form>
@@ -161,17 +163,18 @@
           </div>
           <div id=zero style="display:none"></div>
           <div class="wrapper">
-            <a href="#" target=_self onClick="show()"><span>Continue</span></a>
+            <a href="#" target=_self onClick="show3()"><span>Continue</span></a>
           </div>
           
-          <div id=aa style="display:none">
-          <a href=# target_self onClick="hide()" class=right>x</a>
+          <div class="aa" id="aa 3"  style="display:none">
+          <a href=# target_self onClick="hide3()" class=right>x</a>
           <form id="form 3">
+            <h3>Protect your business</h2>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
             <label for="surname">Surname:</label>
             <input name="surname" type="text" id="surname" />
-            <label for="ID">ID:</label>
+            <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
             <button id="button" >Generate</button>
           </form>
@@ -193,17 +196,18 @@
           </div>
           <div id=zero style="display:none"></div>
           <div class="wrapper">
-            <a href="#" target=_self onClick="show()"><span>Continue</span></a>
+            <a href="#" target=_self onClick="show4()"><span>Continue</span></a>
           </div>
           
-          <div id=aa style="display:none">
-          <a href=# target_self onClick="hide()" class=right>x</a>
+          <div class="aa" id="aa 4"  style="display:none">
+          <a href=# target_self onClick="hide4()" class=right>x</a>
           <form id="form 4">
+            <h3>Protect employees</h3>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
             <label for="surname">Surname:</label>
             <input name="surname" type="text" id="surname" />
-            <label for="ID">ID:</label>
+            <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
             <button id="button" >Generate</button>
           </form>
@@ -225,17 +229,18 @@
           </div>
           <div id=zero style="display:none"></div>
           <div class="wrapper">
-            <a href="#" target=_self onClick="show()"><span>Continue</span></a>
+            <a href="#" target=_self onClick="show5()"><span>Continue</span></a>
           </div>
           
-          <div id=aa style="display:none">
-          <a href=# target_self onClick="hide()" class=right>x</a>
+          <div class="aa" id="aa 5"  style="display:none">
+          <a href=# target_self onClick="hide5()" class=right>x</a>
           <form id="form 5">
+            <h3>Protect your health</h2>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
             <label for="surname">Surname:</label>
             <input name="surname" type="text" id="surname" />
-            <label for="ID">ID:</label>
+            <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
             <button id="button" >Generate</button>
           </form>
@@ -256,104 +261,7 @@
 
   <script src="/js/main.js"></script>
   <script src="/js/pdf.js"></script>
-  <script>
-//     const contactform= document.querySelector('.contact-form')
-   
-
-// let name=document.getElementById('name');
-// let email=document.getElementById('email');
-// let subject=document.getElementById('subject');
-// let message=document.getElementById('message');
-
-
-// contactform.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-
-
-//     let formData = {
-//         name:name.value,
-//         email:email.value,
-//         subject:subject.value,
-//         message:message.value
-//     }
-
-//     var doc = new jsPDF()
-
-// doc.setFontSize(40)
-// doc.text("Octonyan loves jsPDF", 35, 25)
-// doc.addImage("examples/images/Octonyan.jpg", "JPEG", 15, 40, 180, 180)
-// doc.save("testo.pdf")
-    // let xhr=new XMLHttpRequest();
-    // xhr.open('POST','/');
-    // xhr.setRequestHeader('content-type','application/json');
-    // xhr.onload = function(){
-    //     console.log(xhr.responseText);
-    //     if(xhr.responseText== 'success'){
-    //         alert('email sent');
-    //         name.value="";
-    //         email.value="";
-    //         subject.value="";
-    //         message.value="";
-
-    //     }else{
-    //         alert('something went wrong')
-    //     }
-    // }
-
-    // xhr.send(JSON.stringify(formData));
-
-
-//     console.log(formData);
-// })
-
-window.jsPDF = window.jspdf.jsPDF;
-
-var form=document.getElementById('form 1')
-form.addEventListener('submit',function(event){
-  event.preventDefault()
-
-  //var logoimg='data:image/png;base64,'+Base64.encode('/assets/new-logo.png');
-  var name =document.getElementById('name').value
-  var surname =document.getElementById('surname').value
-  var ID =document.getElementById('ID').value
-
-
-  var doc = new jsPDF()
-  doc.addImage("/assets/new-logo.png", 'PNG', 155, 5, 50, 50);
-  doc.setTextColor("red");
-  doc.setFontSize(22);
-  doc.text("protecnow",160,60);
-
-  doc.setTextColor("black");
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(19);
-  doc.text("Name:", 2, 80);
-  doc.setFont("courier", "normal");
-  doc.setFontSize(17);
-  doc.text(name,50,80);
-
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(19);
-  doc.text("Surname:", 2, 90);
-  doc.setFont("courier", "normal");
-  doc.setFontSize(17);
-  doc.text(surname,50,90);
-
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(19);
-  doc.text("ID:", 2, 100);
-  doc.setFont("courier", "normal");
-  doc.setFontSize(17);
-  doc.text(ID,50,100);
-
-
-
-
-
-  doc.save("testo.pdf");
-}
-)
-  </script>
+  
   
 </body>
 </html>

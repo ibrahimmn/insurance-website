@@ -25,6 +25,85 @@ router.get('/getinsurance', requiresAuth(), function (req, res, next) {
   });
 });
 
+router.get('/aboutus', requiresAuth(), function (req, res, next) {
+  res.render('aboutus', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/aroundworldinsurance', requiresAuth(), function (req, res, next) {
+  res.render('aroundworldinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/carinsurance', requiresAuth(), function (req, res, next) {
+  res.render('carinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/contactus', requiresAuth(), function (req, res, next) {
+  res.render('contactus', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/homeinsurance', requiresAuth(), function (req, res, next) {
+  res.render('homeinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/lifeinsurance', requiresAuth(), function (req, res, next) {
+  res.render('lifeinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/mobileinsurance', requiresAuth(), function (req, res, next) {
+  res.render('mobileinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/overview', requiresAuth(), function (req, res, next) {
+  res.render('overview', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/productinsurance', requiresAuth(), function (req, res, next) {
+  res.render('productinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/protectbusiness', requiresAuth(), function (req, res, next) {
+  res.render('protectbusiness', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+
+
+
+
+
+
+
+
+
 
 
 router.post('/', (req, res)=>{

@@ -16,95 +16,9 @@
 </head>
 <body>
   
-  <section class="top">
-
-    <ul class="nav">
-   <li>
-     <div class="logo">
-       <a href="/home.html"> <img id="logoimg"src="/assets/new-logo.png" alt="protectnow">protectnow</a>
-     </div>
-   </li>
-   
-   <li>
-     <div class="toggle">
-         <a href="#"><i class="fa-solid fa-bars"></i></a>
-     </div>
-   </li>
-     <ul class="menu">
-         <li><a href="/overview.html">Overview</a></li>
-         <li>
-             <div class="dropdown">
-                 <button class="dropbtn">Services 
-                   <i class="fa fa-angle-down"></i>
-                 </button>
-                 <div class="dropdown-content">
-                   <div class="inner-dropdown">
-                       <a href="/protectwhat.html">Protect what you love  <i class="fa fa-angle-right"></i></a>
-                       <div class="dropright-content">
-                         <a href="/carinsurance.html">Car insurance</a>
-                         <a href="/homeinsurance.html">Home insurance</a>
-                         <a href="/travelinsurance.html">Travel insurance</a>
-                       </div>
-                     </div>
-             
-                   <div class="inner-dropdown">
-                       <a href="/protectwho.html">Protect who you love  <i class="fa fa-angle-right"></i></a>
-                       <div class="dropright-content">
-                         <a href="/savingsinsurance.html">Savings and investments</a>
-                         <a href="/lifeinsurance.html">Life insurance and critical illness</a>
-                         <a href="/retirement.html">pensions and retirement planning</a>
-                       </div>
-                     </div>
-                     <a href="/protecthealth.html">Protect your health</a>
-             
-                     <div class="inner-dropdown">
-                       <a href="/protectbusiness.html">Protect your business <i class="fa fa-angle-right"></i></a>
-                       <div class="dropright-content">
-                         <a href="/productinsurance.html">Your products </a>
-                         <a href="/sustainibilityinsurance.html">Commercial insurance Sustainibility</a>
-                         <a href="/riskinsurance.html">Commercial insurance Risk Insights </a>
-                       </div>
-                     </div>
-             
-                     <div class="inner-dropdown">
-                       <a href="/protectemployees.html">Protect your employees <i class="fa fa-angle-right"></i></a>
-                       <div class="dropright-content">
-                         <a href="/mobileinsurance.html">Internationally mobile employees</a>
-                         <a href="/aroundworldinsurance.html">Protection all around the world</a>
-                       </div>
-                     </div>
-                 
-                 </div>
-               </div> 
-         </li>
-         <li><a href="/aboutus.html">About us</a></li>
-         <li><a href="/contactus.html">Contact us</a></li>
-         
-     </ul>
-     <ul class="logreg">
-      <% if (locals.user) { %>
-         
-        <li class="log"><a href="/logout">Logout</a></li>
-        <li class="reg"><a href="/getinsurance">Get insurance</a></li>
-    <% } else { %>
-      <li class="log"><a href="/login">Login</a></li>
-      <li class="reg"><a href="/signup">Register</a></li>
-     <% } %>
-<!--          
-<% if (locals.isAuthenticated) { %>
- <li><p>You are logged in. <a href="/profile" class="underline">View your profile</a>.</p>
- </li> 
-<% } else { %>
-  <li class="log"><a href="/login">Login</a></li>
-  <li class="reg"><a href="/signup">Register</a></li>
-<% } %> -->
-        
-     </ul>
+  <%- include('partials/header') -%>
+  <div class="separator"></div>
   
-   </ul>
-  </section>
-
-
 <div class="header">
    <img src="/assets/pointing.png" >
   <p>Get an insurance in a blink of an eye</p> 
@@ -112,7 +26,7 @@
 
 <div class="hand">
   
-  <p>Start by <a href="login.html">logging in </a> to your account or <a href="register.html">register</a> now to access and subscrice to insurances you need</p>
+  <p>Start by <a href="/login">logging in </a> to your account to access and subscrice to insurances you need</p>
   <img src="/assets/inshand.png" alt="get isnurance">
   
 </div>
@@ -139,50 +53,7 @@
     <p><strong>Be prepared</strong></p>
   </div>
 
-
-<footer>
-  <div class="row primary">
-    <div class="column about">
-        <h3>Connect</h3>
-        <p>
-          <i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i>   Istanbul,Küçükçekmece,Beşyol
-        </p>
-        <div class="social">
-          <a href="https://tr-tr.facebook.com/IAUKampus/"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://twitter.com/IAUKampus?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.instagram.com/iaukampus/"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://tr.linkedin.com/school/istanbul-aydin-university/"><i class="fa-brands fa-linkedin-in"></i></a>
-            
-        </div>
-    </div>
-
-    <div class="column link">
-        <h3>Links</h3>
-        <ul>
-            <li><a href="/home.html">Home</a></li>
-            <li><a href="/overview.html">Overview</a></li>
-            <li><a href="/conctactus.html">Contact us</a></li>
-            <li><a href="/aboutus.html">About us</a></li>
-        </ul>
-    </div>
-
-    <div class="column logrog">
-      <h3>Join us</h3>
-      <ul>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
-         
-      </ul>
-  </div>
-
-  <div class="column good">
-    <h2>You're in good hands</h2>
-  </div>
-
-
-</div>
-  
-</footer>
+  <%- include('partials/footer') -%>
 
 
 

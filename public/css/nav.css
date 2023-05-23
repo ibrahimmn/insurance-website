@@ -10,7 +10,7 @@ body{
   /* nav start */
  
  
-  #topBtn {
+    #topBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -28,6 +28,11 @@ body{
     width:70px;
     border-radius: 50%;
     
+  }
+  .separator{
+    background-color: #fffdfa;
+    width: 100%;
+    height: 57px;
   }
   
   #topBtn:hover {

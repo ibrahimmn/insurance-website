@@ -95,13 +95,68 @@ router.get('/protectbusiness', requiresAuth(), function (req, res, next) {
   });
 });
 
+router.get('/protectemployees', requiresAuth(), function (req, res, next) {
+  res.render('protectemployees', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/protecthealth', requiresAuth(), function (req, res, next) {
+  res.render('protecthealth', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/protectwhat', requiresAuth(), function (req, res, next) {
+  res.render('protectwhat', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/protectwho', requiresAuth(), function (req, res, next) {
+  res.render('protectwho', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/retirement', requiresAuth(), function (req, res, next) {
+  res.render('retirement', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/riskinsurance', requiresAuth(), function (req, res, next) {
+  res.render('riskinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/savingsinsurance', requiresAuth(), function (req, res, next) {
+  res.render('savingsinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
+router.get('/sustainibilityinsurance', requiresAuth(), function (req, res, next) {
+  res.render('sustainibilityinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
+
+router.get('/travelinsurance', requiresAuth(), function (req, res, next) {
+  res.render('travelinsurance', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    
+  });
+});
 
 
 

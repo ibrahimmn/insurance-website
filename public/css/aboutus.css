@@ -10,7 +10,7 @@ body{
   /* nav start */
  
  
-  #topBtn {
+    #topBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -29,6 +29,11 @@ body{
     border-radius: 50%;
     
   }
+  .separator{
+    background-color: #fffdfa;
+    width: 100%;
+    height: 57px;
+  }
   
   #topBtn:hover {
     opacity: 0.6;
@@ -37,7 +42,12 @@ body{
  
 
   .top{}
-  .nav{
+  .top{
+    position: fixed;
+    width: 100%;
+    
+  }
+ .nav{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -50,7 +60,7 @@ body{
     float: left;
   }
   .nav a{
-    color: #111;
+    color:  #696868da;
   }
   .nav a:hover{
     color: #ef4b3f;
@@ -103,11 +113,11 @@ body{
     font-size: x-large;
     border: none;
     outline: none;
-    color: black;
-  
+    color: #696868da;
+
     background-color: inherit;
     font-family: inherit;
-  
+
   }
   .dropdown .dropbtn:hover {
    color: #ef4b3f;

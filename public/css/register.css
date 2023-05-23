@@ -10,7 +10,12 @@ a,a.hover{
   text-decoration: none;
 }
 
-.nav{
+.top{
+    position: fixed;
+    width: 100%;
+    
+  }
+ .nav{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -23,7 +28,7 @@ a,a.hover{
     float: left;
   }
   .nav a{
-    color: #111;
+    color:  #696868da;
   }
   .nav a:hover{
     color: #ef4b3f;
@@ -76,11 +81,11 @@ a,a.hover{
     font-size: x-large;
     border: none;
     outline: none;
-    color: black;
-  
+    color: #696868da;
+
     background-color: inherit;
     font-family: inherit;
-  
+
   }
   .dropdown .dropbtn:hover {
    color: #ef4b3f;

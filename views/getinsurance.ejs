@@ -87,7 +87,7 @@
           
           <div class="aa" id="aa 1"  style="display:none">
           <a href=# target_self onClick="hide()" class=right>x</a>
-          <form id="form 1">
+          <form class="form1" id="form 1">
             <h3>Protect what you love</h2>
             <label for="name">Name:</label>
             <input name="name" type="text" id="name" />
@@ -95,7 +95,8 @@
             <input name="surname" type="text" id="surname" />
             <label for="ID">TCKN:</label>
             <input name="ID" type="text" id="ID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  />
-            <button id="button" >Generate</button>
+            <button type="submit" id="button" >Generate</button>
+            <input type="submit" value="send"/>
           </form>
           </div>
 
@@ -246,7 +247,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script src="/js/main.js"></script>
-  <script src="/js/pdf.js"></script>
+  <script src="/js/pdftest.js"></script>
   
   
 </body>

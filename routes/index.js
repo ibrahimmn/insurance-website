@@ -1,6 +1,6 @@
 var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
-
+var mysql = require('mysql');
 const nodemailer= require("nodemailer");
 const PDFDocument = require('pdfkit');
 
@@ -24,6 +24,48 @@ router.get('/getinsurance', requiresAuth(), function (req, res, next) {
     title: 'Get insurance'
   });
 });
+
+
+
+  // setup your databse (username & password & databasename)
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '121212',
+    database: 'myform'
+  });
+
+// check your database connection
+  connection.connect(function(err) {
+
+    if (err) {
+        return console.error('error: ' + err.message);
+    }
+
+    console.log('Connected to the MySQL server.');
+
+    // connection.query("SELECT * FROM users", function (err, result, fields) {
+    //   if (err) throw err;
+    //   console.log(result);
+    // });
+  });
+
+// router.post('/getinsirance', function(req, res, next) {
+//   var name = req.body.name;
+//   var surname = req.body.surname;
+//   var ID = req.body.ID;
+  //var message = req.body.message;
+// console.log("looooool");
+//   var sql = `INSERT INTO users (ID, name, surname) VALUES ("${ID}","${name}", "${surname}",  , NOW())`;
+//   connection.query(sql, function(err, result) {
+//     if (err) throw err;
+//     console.log('record inserted');
+//     req.flash('success', 'Data added successfully!');
+//    res.redirect('/');
+//   });
+// });
+
+
 
 router.get('/aboutus', requiresAuth(), function (req, res, next) {
   res.render('aboutus', {
@@ -190,6 +232,27 @@ router.post('/', (req, res)=>{
 
 })
 
+
+
+
+
+
+router.post('/insurance', (req, res)=>{
+  console.log(req.body);
+    var name = req.body.name;
+   var surname = req.body.surname;
+   var ID = req.body.ID;
+  var message = req.body.message;
+ console.log("looooool");
+   var sql = `INSERT INTO users (ID, name, surname) VALUES ("${ID}","${name}", "${surname}")`;
+   connection.query(sql, function(err, result) {
+     if (err) throw err;
+     console.log('record inserted');
+    // req.flash('success', 'Data added successfully!');
+//    res.redirect('/');
+   })
+
+})
 
 
 module.exports = router;

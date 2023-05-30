@@ -3,6 +3,7 @@ const { requiresAuth } = require('express-openid-connect');
 var mysql = require('mysql');
 const nodemailer= require("nodemailer");
 const PDFDocument = require('pdfkit');
+const flash = require('connect-flash');
 
 router.get('/', function (req, res, next) {
   res.render('home', {
@@ -242,14 +243,19 @@ router.post('/insurance', (req, res)=>{
     var name = req.body.name;
    var surname = req.body.surname;
    var ID = req.body.ID;
+   var package =req.body.package;
   var message = req.body.message;
- console.log("looooool");
-   var sql = `INSERT INTO users (ID, name, surname) VALUES ("${ID}","${name}", "${surname}")`;
+  
+    var sql = `INSERT INTO users (ID, name, surname, packages) VALUES ("${ID}","${name}", "${surname}", "${package}")`;
+  // var sql=`SELECT * FROM users
+  // WHERE ID = 1;`
    connection.query(sql, function(err, result) {
      if (err) throw err;
      console.log('record inserted');
-    // req.flash('success', 'Data added successfully!');
-//    res.redirect('/');
+     console.log(err);
+     console.log(result);
+     //req.flash('success', 'Data added successfully!');
+     //res.redirect('/');
    })
 
 })

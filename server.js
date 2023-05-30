@@ -3,8 +3,10 @@ const express = require('express');
 const http = require('http');
 const logger = require('morgan');
 const path = require('path');
+const flash = require('connect-flash');
 // const { jsPDF } = require("jspdf");
 const router = require('./routes/index');
+const session = require('express-session');
 
 
 
@@ -19,7 +21,15 @@ const { auth } = require('express-openid-connect');
 //dotenv.load();
 
 const app = express();
+app.use(flash());
 
+
+app.use(session({
+  secret: 'codeforgeek',
+  saveUninitialized: true,
+  resave: true,
+  cookie: { maxAge: 60000 }
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

@@ -244,21 +244,25 @@ router.post('/insurance', (req, res)=>{
    var surname = req.body.surname;
    var ID = req.body.ID;
    var package =req.body.package;
-  var message = req.body.message;
+  var email = req.body.email;
   
-    var sql = `INSERT INTO users (ID, name, surname, packages) VALUES ("${ID}","${name}", "${surname}", "${package}")`;
-  // var sql=`SELECT * FROM users
-  // WHERE ID = 1;`
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+     //var sql=`SELECT * FROM users
+   //  WHERE emailAddress ="${email}"`;
+  //  var sql=`SELECT * FROM users
+  //  WHERE ID=1`;
    connection.query(sql, function(err, result) {
      if (err) throw err;
      console.log('record inserted');
      console.log(err);
-     console.log(result);
+     //console.log(result);
      //req.flash('success', 'Data added successfully!');
      //res.redirect('/');
    })
 
 })
+
+
 
 
 module.exports = router;

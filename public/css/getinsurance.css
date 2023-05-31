@@ -507,6 +507,31 @@ flex-direction: row;
 .aa h3{
   color: #ef4b3f;
 }
+
+.aaa {  
+ 
+  position:fixed;
+  left:0;
+  right:0;
+  margin:0 auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  padding: 15px;  
+  background: #fff;
+  box-sizing: content-box;
+  border: 0px solid black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgb(207, 11, 11) 0px -3px 0px inset;
+
+align-items: center;
+
+
+}
+
+
 #button{
   margin-top: 10px;
   background-color: #ef4b3f;
@@ -514,7 +539,7 @@ flex-direction: row;
   border-radius: 10px;
   color: #fffdfa;
   font-size: 25px;
-  width: 156px;
+  width: 306px;
     height: 39px;
   text-align: center;
   cursor: pointer;

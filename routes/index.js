@@ -238,13 +238,37 @@ router.post('/', (req, res)=>{
 
 
 
-router.post('/insurance', (req, res)=>{
+router.post('/getinsurance/insurance', (req, res)=>{
   console.log(req.body);
     var name = req.body.name;
    var surname = req.body.surname;
    var ID = req.body.ID;
    var package =req.body.package;
   var email = req.body.email;
+  
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+     //var sql=`SELECT * FROM users
+   //  WHERE emailAddress ="${email}"`;
+  //  var sql=`SELECT * FROM users
+  //  WHERE ID=1`;
+   connection.query(sql, function(err, result) {
+     if (err) throw err;
+     console.log('record inserted');
+     console.log(err);
+     //console.log(result);
+     //req.flash('success', 'Data added successfully!');
+     //res.redirect('/');
+   })
+
+})
+
+router.post('/getinsurance/who', (req, res)=>{
+  console.log(req.body);
+    var name = req.body.name2;
+   var surname = req.body.surname2;
+   var ID = req.body.ID2;
+   var package =req.body.package2;
+  var email = req.body.email2;
   
     var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
      //var sql=`SELECT * FROM users

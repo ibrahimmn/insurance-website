@@ -135,15 +135,14 @@ form.addEventListener('submit',function(event){
 
 
 
-var form2=document.getElementById('form 2')
-form2.addEventListener('submit',function(event){
+var formm2=document.getElementById('form 2')
+formm2.addEventListener('submit',function(event){
   event.preventDefault()
 
   //var logoimg='data:image/png;base64,'+Base64.encode('/assets/new-logo.png');
-  var name =document.getElementById('name').value
-  var surname =document.getElementById('surname').value
-  var ID =document.getElementById('ID').value
-
+  var name =document.getElementById('name2').value;
+  var surname =document.getElementById('surname2').value;
+  var ID =document.getElementById('ID2').value;
 
   var doc = new jsPDF()
   doc.addImage("/assets/new-logo.png", 'PNG', 85, 5, 40, 40);
@@ -195,7 +194,7 @@ form2.addEventListener('submit',function(event){
 
 
 
-const form1= document.querySelector('.form1')
+const form1= document.querySelector('.form1');
   let name=document.getElementById('name');
   let surname=document.getElementById('surname');
   let ID=document.getElementById('ID');
@@ -222,7 +221,7 @@ const form1= document.querySelector('.form1')
       }
       
       let xhr=new XMLHttpRequest();
-      xhr.open('POST','/insurance');
+      xhr.open('POST','/getinsurance/insurance');
       xhr.setRequestHeader('content-type','application/json');
       xhr.onload = function(){
           console.log(xhr.responseText);
@@ -240,7 +239,67 @@ const form1= document.querySelector('.form1')
       }
   
       xhr.send(JSON.stringify(formData));
+      
+
       form1.reset();
+      document.getElementById("aaa 1").style.display = "block";
+      document.getElementById("zero").style.display = "none";
+      document.getElementById("aa 1").style.display = "none";
+      document.getElementById("aa 2").style.display = "none";
+      document.getElementById("aa 3").style.display = "none";
+      document.getElementById("aa 4").style.display = "none";
+      document.getElementById("aa 5").style.display = "none";
+  })
+
+
+
+  
+  const form2= document.querySelector('.form2');
+   let name2=document.getElementById('name2');
+   let surname2=document.getElementById('surname2');
+   let ID2=document.getElementById('ID2');
+   let package2=document.getElementById('package2');
+   let email2=document.getElementById('email2');
+  
+  form2.addEventListener('submit', (e)=>{
+      e.preventDefault();
+  
+    
+  
+  
+  
+  
+  
+  
+  
+      let formData = {
+          name2:name2.value,
+          surname2:surname2.value,
+          ID2:ID2.value,
+          email2:email2.value,
+          package2:package2.value,
+      }
+      
+      let xhr=new XMLHttpRequest();
+      xhr.open('POST','/getinsurance/who');
+      xhr.setRequestHeader('content-type','application/json');
+      xhr.onload = function(){
+          console.log(xhr.responseText);
+          if(xhr.responseText== 'success'){
+              alert('database sent');
+              name2.value="";
+              surname2.value="";
+            
+              ID2.value="";
+              package2.value="";
+  
+          }else{
+              alert(e)
+          }
+      }
+  
+      xhr.send(JSON.stringify(formData));
+      form2.reset();
       document.getElementById("aaa 1").style.display = "block";
       document.getElementById("zero").style.display = "none";
       document.getElementById("aa 1").style.display = "none";

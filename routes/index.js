@@ -5,6 +5,13 @@ const nodemailer= require("nodemailer");
 const PDFDocument = require('pdfkit');
 const flash = require('connect-flash');
 
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '121212',
+  database: 'myform'
+});
+
 router.get('/', function (req, res, next) {
   res.render('home', {
     
@@ -13,28 +20,27 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', requiresAuth(), function (req, res, next) {
+ 
+ 
   res.render('profile', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Profile page'
+    title: 'Profile page',
+    
   });
 });
 
 router.get('/getinsurance', requiresAuth(), function (req, res, next) {
   res.render('getinsurance', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Get insurance'
+    title: 'Get insurance',
+   
   });
 });
 
 
 
   // setup your databse (username & password & databasename)
-  var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '121212',
-    database: 'myform'
-  });
+ 
 
 // check your database connection
   connection.connect(function(err) {
@@ -269,6 +275,81 @@ router.post('/getinsurance/who', (req, res)=>{
    var ID = req.body.ID2;
    var package =req.body.package2;
   var email = req.body.email2;
+  
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+     //var sql=`SELECT * FROM users
+   //  WHERE emailAddress ="${email}"`;
+  //  var sql=`SELECT * FROM users
+  //  WHERE ID=1`;
+   connection.query(sql, function(err, result) {
+     if (err) throw err;
+     console.log('record inserted');
+     console.log(err);
+     //console.log(result);
+     //req.flash('success', 'Data added successfully!');
+     //res.redirect('/');
+   })
+
+})
+
+
+router.post('/getinsurance/business', (req, res)=>{
+  console.log(req.body);
+    var name = req.body.name3;
+   var surname = req.body.surname3;
+   var ID = req.body.ID3;
+   var package =req.body.package3;
+  var email = req.body.email3;
+  
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+     //var sql=`SELECT * FROM users
+   //  WHERE emailAddress ="${email}"`;
+  //  var sql=`SELECT * FROM users
+  //  WHERE ID=1`;
+   connection.query(sql, function(err, result) {
+     if (err) throw err;
+     console.log('record inserted');
+     console.log(err);
+     //console.log(result);
+     //req.flash('success', 'Data added successfully!');
+     //res.redirect('/');
+   })
+
+})
+
+
+router.post('/getinsurance/employees', (req, res)=>{
+  console.log(req.body);
+    var name = req.body.name4;
+   var surname = req.body.surname4;
+   var ID = req.body.ID4;
+   var package =req.body.package4;
+  var email = req.body.email4;
+  
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+     //var sql=`SELECT * FROM users
+   //  WHERE emailAddress ="${email}"`;
+  //  var sql=`SELECT * FROM users
+  //  WHERE ID=1`;
+   connection.query(sql, function(err, result) {
+     if (err) throw err;
+     console.log('record inserted');
+     console.log(err);
+     //console.log(result);
+     //req.flash('success', 'Data added successfully!');
+     //res.redirect('/');
+   })
+
+})
+
+
+router.post('/getinsurance/health', (req, res)=>{
+  console.log(req.body);
+    var name = req.body.name5;
+   var surname = req.body.surname5;
+   var ID = req.body.ID5;
+   var package =req.body.package5;
+  var email = req.body.email5;
   
     var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
      //var sql=`SELECT * FROM users

@@ -71,7 +71,47 @@
 
 
 
-
+  <div class="table-data">
+    <h2>My packages</h2>
+        <table border="5">
+            <tr>
+                <th>S.N</th>
+                <th>TCKN</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Packages</th>
+                
+            </tr>
+            
+            <%
+            if(userData.length!=0){
+            var i=1;
+            userData.forEach(function(data){
+              if(data.emailAddress=user.email){
+            %>
+            <tr>
+              
+              <input name="email" type="email" id="email" value="<%= user.email %>" style="display: none;" />
+                <td><%=i; %></td>
+                <td><%=data.ID %></td>
+                <td><%=data.name %></td>
+                <td><%=data.surname %></td>
+                <td><%=data.emailAddress %></td>
+                <td><%=data.packages %></td>
+                <!-- <td><%=data.city %></td>
+                <td><%=data.country %></td>
+                <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
+                <td><a href="/users/delete/<%=data.id%>">Delete</a></td> -->
+            </tr>
+            <%  i++; }}) %>
+            <% } else{ %>
+                <tr>
+                    <td colspan="7">No Data Found</td>
+                </tr>
+            <% } %>
+        </table>
+        </div>
 
 
 

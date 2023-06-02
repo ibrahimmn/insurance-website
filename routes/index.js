@@ -20,13 +20,19 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', requiresAuth(), function (req, res, next) {
- 
- 
-  res.render('profile', {
-    userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Profile page',
-    
+  var sql='SELECT * FROM users';
+  var email = req.body.email;
+  console.log();
+    connection.query(sql, function (err, data, fields) {
+    if (err) throw err;
+    res.render('profile', { userProfile: JSON.stringify(req.oidc.user, null, 2), title: 'User List', userData: data});
   });
+ 
+  // res.render('profile', {
+  //   userProfile: JSON.stringify(req.oidc.user, null, 2),
+  //   title: 'Profile page',
+    
+  // });
 });
 
 router.get('/getinsurance', requiresAuth(), function (req, res, next) {

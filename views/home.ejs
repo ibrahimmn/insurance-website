@@ -30,12 +30,23 @@ chat='true'>
   <p>Get an insurance in a blink of an eye</p> 
 </div>
 
-<div class="hand">
+<% if (locals.user) { %>
+         
+  <div class="hand">
   
-  <p>Start by <a href="/login">logging in </a> to your account to access and subscrice to insurances you need</p>
-  <img src="/assets/inshand.png" alt="get isnurance">
+    <p>You successfuly logged in to your account</p>
+    <img src="/assets/inshand.png" alt="get isnurance">
+    
+  </div>
+<% } else { %>
+  <div class="hand">
   
-</div>
+    <p>Start by <a href="/login">logging in </a> to your account to access and subscribe to insurances you need</p>
+    <img src="/assets/inshand.png" alt="get isnurance">
+    
+  </div>
+
+<% } %>
 
 <div class="quote">
 <div class="innerquote">

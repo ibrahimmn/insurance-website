@@ -50,21 +50,21 @@
 </div>
   <div class="innerabtus">
 
-    <a id="us" class="abtuscont one hide" href="/home.html">
+    <a id="us" class="abtuscont one hide" href="/">
     <div  >
       <h2>Home</h2>
       <p>Have a look at our home page </p>
 
     </div>
    </a>
-   <a id="us2" class="abtuscont two hide" href="/overview.html">
+   <a id="us2" class="abtuscont two hide" href="/overview">
     <div  >
       <h2>Overview</h2>
       <p>Check all our services and get a good insight</p>
     </div>
     </a>
 
-    <a id="us3" class="abtuscont three hide" href="/contactus.html">
+    <a id="us3" class="abtuscont three hide" href="/contactus">
     <div  >
       <h2>Contact us</h2>
       <p>See where we are and contact us</p>
@@ -74,9 +74,18 @@
 
 </div>
 
-<div class="logn">
-  <p><a href="/login">Sign in</a> now to your account </p>
-</div>
+
+<% if (locals.user) { %>
+  <div class="logn">
+    <p>Check our packages</p>
+  </div>
+<% } else { %>
+  <div class="logn">
+    <p><a href="/login">Sign in</a> now to your account </p>
+  </div>
+<% } %>
+
+
 <div class="logn two">
   <p>What we care about</p>
 </div>
@@ -93,7 +102,7 @@
                   </figure>
                   <div class="inf">
                       <div class="innerinf">
-                      <h4>Our customers</h4>
+                      <h3>Our customers</h3>
                       <p>At protectnow, we prioritize the satisfaction and well-being of our customers, and strive to provide exceptional care with every interaction.</p>
                   </div>
                   </div>
@@ -106,7 +115,7 @@
                   </figure>
                   <div class="inf">
                       <div class="innerinf">
-                      <h4>World support</h4>
+                      <h3>World support</h3>
                       <p>Our company is dedicated to being a responsible global citizen, and we will continue to work towards creating a world that is more just, equitable, and sustainable for generations to come..</p>
                   </div>
                   </div>
@@ -119,7 +128,7 @@
                   </figure>
                   <div class="inf">
                       <div class="innerinf">
-                      <h4>Industry Knowledge</h4>
+                      <h3>Industry Knowledge</h3>
                       <p>Today, risks are closely interconnected. They can affect all of us in unpredicted ways, and they are your concern, as well as ours. Find articles from our industry experts in our Knowledge Hub.</p>
                   </div>
                   </div>
@@ -132,7 +141,7 @@
                   </figure>
                   <div class="inf">
                       <div class="innerinf">
-                      <h4>Sustainibility</h4>
+                      <h3>Sustainibility</h3>
                       <p>The world is transforming at an unprecedented pace. At Zurich we believe we can have a positive impact in our role as insurer, investor, employer and in society. Get more insights in our Sustainability section.</p>
                   </div>
                   </div>

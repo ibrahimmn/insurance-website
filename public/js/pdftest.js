@@ -79,19 +79,14 @@ function show(){
 var form=document.getElementById('form 1');
 form.addEventListener('submit',function(event){
   event.preventDefault()
-
-  //var logoimg='data:image/png;base64,'+Base64.encode('/assets/new-logo.png');
   var name =document.getElementById('name').value
   var surname =document.getElementById('surname').value
   var ID =document.getElementById('ID').value
-
-
   var doc = new jsPDF()
   doc.addImage("/assets/new-logo.png", 'PNG', 85, 5, 40, 40);
   doc.setTextColor("red");
   doc.setFontSize(22);
   doc.text("protecnow",87,50,);
-
   doc.setTextColor("black");
   doc.setFont("helvetica", "bold");
   doc.setFontSize(19);
@@ -99,34 +94,27 @@ form.addEventListener('submit',function(event){
   doc.setFont("courier", "normal");
   doc.setFontSize(17);
   doc.text(name,50,80);
-
   doc.setFont("helvetica", "bold");
   doc.setFontSize(19);
   doc.text("Surname:", 7, 90);
   doc.setFont("courier", "normal");
   doc.setFontSize(17);
   doc.text(surname,50,90);
-
   doc.setFont("helvetica", "bold");
   doc.setFontSize(19);
   doc.text("TCKN:", 7, 100);
   doc.setFont("courier", "normal");
   doc.setFontSize(17);
   doc.text(ID,50,100);
-
   doc.setFontSize(20);
   doc.setFont("normal");
   doc.text("Thank you "+name+" "+surname+".",2,120);
-  //doc.text("programs.",2,130);
   doc.text("You have succesfuly been registerd in our  - Protect what you love -",2,140);
   doc.text("insurance program that includes car insurance, home insurance and ",2,150);
   doc.text("travel insurance. ",2,160);
-
   doc.setFont("times", "italic");
   doc.text("We care about you", 200, 180, null, null, "right");
   doc.addImage("/assets/stamp.png", 'PNG', 155, 190, 40, 40);
-
-
 
   doc.save("protect-what-you-love.pdf");
 }
@@ -381,23 +369,13 @@ const form1= document.querySelector('.form1');
   
   form1.addEventListener('submit', (e)=>{
       e.preventDefault();
-
-    
-
-
-
-
-
-  
-  
       let formData = {
           name:name.value,
           surname:surname.value,
           ID:ID.value,
           email:email.value,
           package:package.value,
-      }
-      
+      }      
       let xhr=new XMLHttpRequest();
       xhr.open('POST','/getinsurance/insurance');
       xhr.setRequestHeader('content-type','application/json');
@@ -414,11 +392,8 @@ const form1= document.querySelector('.form1');
           }else{
               alert(e)
           }
-      }
-  
+      } 
       xhr.send(JSON.stringify(formData));
-      
-
       form1.reset();
       document.getElementById("aaa 1").style.display = "block";
       document.getElementById("zero").style.display = "none";

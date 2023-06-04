@@ -21,18 +21,13 @@ router.get('/', function (req, res, next) {
 
 router.get('/profile', requiresAuth(), function (req, res, next) {
   var sql='SELECT * FROM users';
-  var email = req.body.email;
-  console.log();
+  
     connection.query(sql, function (err, data, fields) {
     if (err) throw err;
     res.render('profile', { userProfile: JSON.stringify(req.oidc.user, null, 2), title: 'User List', userData: data});
   });
  
-  // res.render('profile', {
-  //   userProfile: JSON.stringify(req.oidc.user, null, 2),
-  //   title: 'Profile page',
-    
-  // });
+ 
 });
 
 router.get('/getinsurance', requiresAuth(), function (req, res, next) {
@@ -45,10 +40,7 @@ router.get('/getinsurance', requiresAuth(), function (req, res, next) {
 
 
 
-  // setup your databse (username & password & databasename)
- 
 
-// check your database connection
   connection.connect(function(err) {
 
     if (err) {
@@ -57,26 +49,8 @@ router.get('/getinsurance', requiresAuth(), function (req, res, next) {
 
     console.log('Connected to the MySQL server.');
 
-    // connection.query("SELECT * FROM users", function (err, result, fields) {
-    //   if (err) throw err;
-    //   console.log(result);
-    // });
   });
 
-// router.post('/getinsirance', function(req, res, next) {
-//   var name = req.body.name;
-//   var surname = req.body.surname;
-//   var ID = req.body.ID;
-  //var message = req.body.message;
-// console.log("looooool");
-//   var sql = `INSERT INTO users (ID, name, surname) VALUES ("${ID}","${name}", "${surname}",  , NOW())`;
-//   connection.query(sql, function(err, result) {
-//     if (err) throw err;
-//     console.log('record inserted');
-//     req.flash('success', 'Data added successfully!');
-//    res.redirect('/');
-//   });
-// });
 
 
 
@@ -258,18 +232,14 @@ router.post('/getinsurance/insurance', (req, res)=>{
    var package =req.body.package;
   var email = req.body.email;
   
-    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages) VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
-     //var sql=`SELECT * FROM users
-   //  WHERE emailAddress ="${email}"`;
-  //  var sql=`SELECT * FROM users
-  //  WHERE ID=1`;
+    var sql = `INSERT INTO users (ID, name, surname, emailAddress, packages)
+     VALUES ("${ID}","${name}", "${surname}", "${email}", "${package}")`;
+   
    connection.query(sql, function(err, result) {
      if (err) throw err;
      console.log('record inserted');
      console.log(err);
-     //console.log(result);
-     //req.flash('success', 'Data added successfully!');
-     //res.redirect('/');
+    
    })
 
 })

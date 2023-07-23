@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '121212',
+  password: '****',
   database: 'myform'
 });
 
@@ -196,7 +196,7 @@ router.post('/', (req, res)=>{
       service:'gmail',
       auth:{
           user:'bobtestlar@gmail.com',
-          pass: 'aoigehkwaxwkurfe'
+          pass: '*****'
       }
   })
   const mailOptions= {
